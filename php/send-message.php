@@ -1,6 +1,6 @@
 
 <?php
-$name_lastname = $_POST['name'] ."-".$_POST['lastname'];
+$name = $_POST['name'] ;
 $mail = $_POST['email'];
 // $message = $_POST['message'];
 
@@ -9,7 +9,7 @@ $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
 $header .= "Mime-Version: 1.0 \r\n";
 $header .= "Content-Type: text/plain";
 
-$message = "This message was sent by  " . $name_lastname . ",\r\n";
+$message = "This message was sent by  " . $name . ",\r\n";
 $message .= "Your e-mail is: " . $mail . " \r\n";
 $message .= "Subject: " . $_POST['message'] . " \r\n";
 $message .= "Sent on: " . date('d/m/Y', time());
