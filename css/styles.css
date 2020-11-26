@@ -1,6 +1,4 @@
 body {
-  font-family: "Bangers", cursive;
-  font-family: "Lato", sans-serif;
   font-family: "Raleway", sans-serif;
 }
 h1 {
@@ -162,7 +160,9 @@ section {
 .navbar-toggler:focus {
   outline: none;
 }
-#hero {
+
+/* HOME */
+#home {
   background-image: url("../img/joshua-rawson-harris-KRELIShKxTM-unsplash.jpg");
   /* background-image: url("../img/imageedit_29_6455549908.jpg"); */
   background-position: center center;
@@ -174,7 +174,7 @@ section {
   opacity: 0.95;
   color: rgba(255, 255, 255, 0.95);
 }
-#hero h5 {
+#home h5 {
   font-family: "Lato", sans-serif;
   font-size: 20px;
   font-weight: 300;
@@ -183,7 +183,7 @@ section {
 
   /* padding-bottom: 15px; */
 }
-#hero h3 {
+#home h3 {
   font-family: "Lato", sans-serif;
   font-size: 30px;
   font-weight: 400;
@@ -192,7 +192,7 @@ section {
   /* padding-top: 80px; */
   /* padding-bottom: 15px; */
 }
-#hero p {
+#home p {
   color: rgba(255, 255, 255, 0.95);
 }
 
@@ -209,14 +209,14 @@ section {
   margin: 15px 0;
 }
 
-.services {
+.expertise {
   padding: 16px 16px;
   border-radius: 2px;
   min-width: 350px;
-  min-height: 150px;
+  min-height: 200px;
 }
 
-.services h3 {
+.expertise h3 {
   /* font-family: "Raleway", sans-serif; */
   font-family: "Russo One", sans-serif;
   font-size: 24px;
@@ -224,7 +224,7 @@ section {
   margin-bottom: 20px;
 }
 
-.services p {
+.expertise p {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -232,7 +232,7 @@ section {
   line-height: 1.5;
   margin-bottom: 12px;
 }
-.services a {
+.expertise a {
   font-family: "Nunito", sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -241,12 +241,12 @@ section {
   margin-bottom: 12px;
 }
 
-.service-box-light {
+.expertise-box-light {
   background-color: #ffffff;
   border: 1.5px solid #7a7a7a;
 }
 
-.service-box-light:hover {
+.expertise-box-light:hover {
   background-color: #ffffff;
   border: 2px solid #1a1a1a;
 }
@@ -258,17 +258,17 @@ section {
 } */
 
 /* TOOLS */
-.tools-container {
+.skills-container {
   margin: 18px 0px;
 }
 
-.tools {
+.skills {
   padding: 16px 16px;
   min-width: 350px;
   min-height: 300px;
 }
 
-#tools h3 {
+#skills h3 {
   font-family: "Nunito", sans-serif;
   font-size: 36px;
   font-weight: 900;
@@ -278,7 +278,7 @@ section {
   color: #1a1a1a;
   line-height: 1.2;
 }
-#tools h4 {
+#skills h4 {
   font-family: "Nunito", sans-serif;
   font-size: 24px;
   font-weight: 900;
@@ -289,8 +289,8 @@ section {
   margin-bottom: 12px;
 }
 
-/* .tools p, */
-.tools p {
+/* .skills p, */
+.skills p {
   font-family: "Nunito", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -299,7 +299,7 @@ section {
   text-align: left;
   margin-bottom: 6px;
 }
-.tools-link {
+.skills-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -313,22 +313,22 @@ section {
   /* margin-top: 20px !important; */
 }
 
-.tools-link:hover {
+.skills-link:hover {
   color: #424242;
   text-decoration: underline;
 }
-.tools-logo {
+.skills-logo {
   padding: 10px 1px 10px 1px;
   max-width: 95px;
 }
-.tools-box-light {
+.skills-box-light {
   background-color: #ffffff;
   border-top: 1.5px solid #7a7a7a;
   border-bottom: 1.5px solid #7a7a7a;
   /* border: 1.5px solid #7a7a7a; */
 }
 
-/* .tools-box-light:hover {
+/* .skills-box-light:hover {
   background-color: #ffffff;
   border-top: 2px solid #1a1a1a;
   border-bottom: 2px solid #1a1a1a;
@@ -395,12 +395,12 @@ section {
     font-size: 36px;
     line-height: normal;
   }
-  #hero h5 {
+  #home h5 {
     font-size: 16px;
     padding-top: 80px;
     padding-bottom: 15px;
   }
-  #hero h3 {
+  #home h3 {
     font-size: 22px;
     font-weight: 400;
     /* padding-top: 80px; */
@@ -409,11 +409,11 @@ section {
   /* .expertise-details h2 {
     font-size: 32px;
   } */
-  .services {
+  .expertise {
     min-width: unset;
     padding: 40px;
   }
-  .tools {
+  .skills {
     min-width: unset;
     padding: 40px;
   }
@@ -424,11 +424,11 @@ section {
   }
 }
 @media (min-width: 576px) {
-  .services {
+  .expertise {
     min-width: unset;
     padding: 40px;
   }
-  .tools {
+  .skills {
     min-width: unset;
     padding: 40px;
   }
@@ -437,11 +437,11 @@ section {
   /* .expertise-details h2 {
     font-size: 30px;
   } */
-  .services {
+  .expertise {
     min-width: unset;
     padding: 20px 20px;
   }
-  .tools {
+  .skills {
     min-width: unset;
     padding: 20px 20px;
   }
