@@ -1,14 +1,14 @@
 # website-roruizf
-Personal roruizf webpage 
+Professional roruizf webpage 
 
-## Un poco acerca de mi
+## A little bit about me
 
-I’m a mechanical engineer with more than 10 years of experience in the field of the energy efficiency of buildings.
+Mechanical engineer by training and more than 10 years of experience in the field of energy efficiency of buildings combined with a strong focus on energy modeling and interest in data science and machine learning applications.
 
-In 2010, I moved from Chile to Belgium to join the Thermodynamics Laboratory of the University of Liège as Research Engineer. Here I had the opportunity to actively participate in 3 interesting research projects related to energy in buildings: Bricker, iSERV and IEA EBC Annex 53.
+I started my journey in 2010 by joining the Thermodynamics Laboratory of the University of Liège in Belgium and taking part in different research projects: Bricker, iSERV, IEA EBC Annex 53.
 
-Since 2018, I work as Expert for the engineering and architecture consultancy company Sweco Belgium where I deliver engineering and consulting services during the development and execution of energy efficiency projects in buildings.
+Then, I joined the engineering consultancy firm Sweco Belgium where I had the opportunity to apply many energy efficiency concepts to projects dealing with energy audits, green building certifications (BREEAM), energy performance certifications (PEB Belgium) and HVAC system design.
 
-In the last time I have developed an intense curiosity in data science, machine learning and deep learning applications.
+Today, I'm looking for new challenges and developing new skills to take my career to the next level. I'm fully convinced that data science and machine learning can provide new and more efficient ways to improve the energy efficiency of buildings, as well as many other sectors.
 
-If you are interested to know more about me feel free to download my resume, visit my social network profiles or email me by following the links under the picture on the right.
+If you are interested to know more about me, feel free to download my resume, take a look at my social media profiles or (even better) email me. I will be glad to hear from you, your interests and projects.
