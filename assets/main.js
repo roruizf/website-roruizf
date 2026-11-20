@@ -97,7 +97,13 @@
     }
   }
 
-  const stops = [[29, 60, 143], [43, 123, 195], [68, 180, 166], [242, 193, 78], [236, 122, 44], [200, 48, 42]];
+  // Palette can be themed from CSS: --carpet: "r g b, r g b, ...".
+  let stops = [[29, 60, 143], [43, 123, 195], [68, 180, 166], [242, 193, 78], [236, 122, 44], [200, 48, 42]];
+  const cssStops = getComputedStyle(doc).getPropertyValue("--carpet").replace(/"/g, "").trim();
+  if (cssStops) {
+    const parsed = cssStops.split(",").map((c) => c.trim().split(/\s+/).map(Number)).filter((c) => c.length === 3 && c.every((n) => !isNaN(n)));
+    if (parsed.length >= 2) stops = parsed;
+  }
   const TMIN = -5, TMAX = 30;
   const color = (t) => {
     let x = Math.max(0, Math.min(1, (t - TMIN) / (TMAX - TMIN))) * (stops.length - 1);
