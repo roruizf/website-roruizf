@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roberto Ruiz Flores — Building Energy Simulation Engineer</title>
+  <meta name="description" content="Roberto Ruiz Flores — mechanical engineer with 15+ years in building energy simulation. EnergyPlus and OpenStudio models for BREEAM and LEED, thermal comfort and overheating studies, and open-source Python tools for simulation workflows. EU citizen.">
+  <meta name="author" content="Roberto Ruiz Flores">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://roruizf.com/">
+  <meta name="theme-color" content="#f3f0e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f100d" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Roberto Ruiz Flores — Building Energy Simulation Engineer">
+  <meta property="og:description" content="Energy and comfort models for BREEAM and LEED, and the Python tools that make them faster to build and check.">
+  <meta property="og:url" content="https://roruizf.com/">
+  <meta property="og:image" content="https://roruizf.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="style.css">
+  <style>.vswitch{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:999;display:flex;gap:2px;padding:4px;background:#111;border-radius:999px;box-shadow:0 8px 30px rgba(0,0,0,.35);font:500 13px/1 system-ui,sans-serif}.vswitch a{color:#bbb;text-decoration:none;padding:9px 14px;border-radius:999px;white-space:nowrap}.vswitch a:hover{color:#fff}.vswitch a[aria-current]{background:#fff;color:#111}@media(max-width:420px){.vswitch a{padding:8px 10px}}</style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Roberto Ruiz Flores",
+    "url": "https://roruizf.com",
+    "jobTitle": "Building Energy Simulation Engineer",
+    "nationality": ["Chile", "Belgium"],
+    "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Universidad de Concepción"}, {"@type": "CollegeOrUniversity", "name": "University of Liège"}],
+    "knowsAbout": ["Building energy simulation", "EnergyPlus", "OpenStudio", "BREEAM", "LEED", "ASHRAE 90.1 Appendix G", "Thermal comfort", "Overheating analysis", "Python", "SQL"],
+    "knowsLanguage": ["en", "fr", "es"],
+    "sameAs": ["https://www.linkedin.com/in/roruizf/", "https://github.com/roruizf"]
+  }
+  </script>
+
+  </head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Roberto Ruiz Flores, home">
+        <span class="brand__mark" aria-hidden="true">R²F</span>
+        <span class="brand__name">Roberto Ruiz Flores</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav__links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#tools">Open source</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--small" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="status reveal"><span class="status__dot" aria-hidden="true"></span>Available for projects, freelance work and new roles</p>
+          <h1 class="hero__title reveal">
+            I model how buildings use energy,
+            <em>and write the software that makes it faster.</em>
+          </h1>
+          <p class="hero__lede reveal">
+            Mechanical engineer with 15+ years in building energy simulation, from research at the University of Liège
+            to Sweco Belgium and my own practice. EnergyPlus and OpenStudio models for BREEAM and LEED, thermal comfort
+            and overheating studies, and open-source Python tools that build and check those models.
+          </p>
+          <div class="hero__cta reveal">
+            <a class="btn" href="mailto:roruizf@gmail.com">roruizf@gmail.com</a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/roruizf/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn btn--ghost" href="https://github.com/roruizf" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <figure class="plot reveal" aria-label="Animated carpet plot of hourly outdoor temperature over one year">
+          <div class="plot__head">
+            <span class="mono">fig. 01 — 8,760 h carpet plot</span>
+            <span class="mono plot__clock" id="plotClock">t = 0 h</span>
+          </div>
+          <div class="plot__body">
+            <div class="plot__yaxis mono" aria-hidden="true"><span>24h</span><span>12h</span><span>0h</span></div>
+            <canvas id="carpet" width="730" height="240"></canvas>
+            <div class="plot__tip mono" id="plotTip" hidden></div>
+          </div>
+          <div class="plot__xaxis mono" aria-hidden="true">
+            <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span>
+          </div>
+          <figcaption class="plot__foot">
+            <span class="mono">Outdoor dry-bulb, temperate climate (synthetic)</span>
+            <span class="colorbar mono" aria-hidden="true"><span>−5 °C</span><i></i><span>30 °C</span></span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="wrap">
+        <dl class="stats">
+          <div class="stat reveal"><dt>Years in simulation</dt><dd data-count="15">15</dd><span class="stat__unit">+</span></div>
+          <div class="stat reveal"><dt>BREEAM projects modelled</dt><dd data-count="6">6</dd><span class="stat__unit">8 buildings</span></div>
+          <div class="stat reveal"><dt>LEED v4.1 offices, ASHRAE 90.1 App. G</dt><dd data-count="2">2</dd><span class="stat__unit">baseline vs. proposed</span></div>
+          <div class="stat reveal"><dt>Working languages</dt><dd data-count="3">3</dd><span class="stat__unit">EN · FR · ES</span></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">01 — What I do</p>
+          <h2>Simulation that answers a design question, <em>not just a credit.</em></h2>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M6 40h36M10 40V22l14-12 14 12v18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19 40V29h10v11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M33 6c2 3 2 5 0 8m5-6c2 3 2 5 0 8" fill="none" stroke="var(--heat)" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Energy &amp; comfort modelling</h3>
+            <p>Whole-building EnergyPlus / OpenStudio models: energy use and savings, HVAC sizing, thermal comfort and overheating, scenario and retrofit comparisons, sensitivity analysis.</p>
+            <ul class="tags"><li>EnergyPlus</li><li>OpenStudio</li><li>TRNSYS</li><li>Carrier HAP</li><li>THERM</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="24" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 20l4 4 8-8" fill="none" stroke="var(--heat)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 30l-3 12 10-5 10 5-3-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Certification modelling</h3>
+            <p>BREEAM energy and health credits (Ene 01, Ene 04, Hea 01, Hea 04) and LEED v4.1 EA under ASHRAE 90.1 Appendix G, including responses to reviewer comments. EPB/PEB support in Belgium.</p>
+            <ul class="tags"><li>BREEAM</li><li>LEED v4.1</li><li>ASHRAE 90.1</li><li>EPB / PEB</li><li>Energy audits</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M16 14L6 24l10 10M32 14l10 10-10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 10l-6 28" stroke="var(--heat)" stroke-width="2.4" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Simulation tooling</h3>
+            <p>Python and SQL to generate, compare and verify models and read results straight from <code>eplusout.sql</code>, plus MCP servers that let AI agents work on OpenStudio models under human review.</p>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Git</li><li>MCP</li><li>Power BI</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN SOURCE -->
+    <section class="section section--ink" id="tools">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">02 — Open source</p>
+          <h2>Tools I build and use <em>on real projects.</em></h2>
+          <p class="section__lede">Energy models are only as good as the checks around them. These libraries make every change to a model readable and every result traceable.</p>
+        </header>
+
+        <div class="repos">
+          <a class="repo repo--feature reveal" href="https://github.com/roruizf/openstudio-mcp-server" target="_blank" rel="noopener" data-repo="roruizf/openstudio-mcp-server">
+            <div class="repo__top"><span class="mono">python · mcp</span><span class="mono repo__stars" aria-label="GitHub stars">★ <b>11</b></span></div>
+            <h3>openstudio-mcp-server</h3>
+            <p>A Model Context Protocol server with 20+ tools that lets AI assistants load, inspect and edit OpenStudio building energy models in natural language. Built on OpenStudio-Toolkit, modelled on LBNL's EnergyPlus MCP.</p>
+            <pre class="repo__code mono" aria-hidden="true"><span class="c"># ask the agent</span>
+<span class="k">›</span> load_osm_model("office.osm")
+<span class="k">›</span> get_model_summary()
+  spaces: 36 · zones: 12 · air loops: 2</pre>
+            <span class="repo__link mono">View on GitHub ↗</span>
+          </a>
+
+          <a class="repo reveal" href="https://github.com/roruizf/OpenStudio-Toolkit" target="_blank" rel="noopener" data-repo="roruizf/OpenStudio-Toolkit">
+            <div class="repo__top"><span class="mono">python · cli</span><span class="mono repo__stars">★ <b>1</b></span></div>
+            <h3>OpenStudio-Toolkit</h3>
+            <p>Read, compare and change <code>.osm</code> models and read <code>eplusout.sql</code> results from Python or the command line. Diffs every model version against the request in one HTML report.</p>
+            <span class="repo__link mono">View on GitHub ↗</span>
+          </a>
+
+          <a class="repo reveal" href="https://github.com/roruizf/OpenStudio-Colab" target="_blank" rel="noopener" data-repo="roruizf/OpenStudio-Colab">
+            <div class="repo__top"><span class="mono">jupyter</span><span class="mono repo__stars">★ <b>0</b></span></div>
+            <h3>OpenStudio-Colab</h3>
+            <p>OpenStudio modelling workflows that run in Google Colab, no local install: open a notebook, load a model, inspect and report.</p>
+            <span class="repo__link mono">View on GitHub ↗</span>
+          </a>
+
+          <a class="repo reveal" href="https://github.com/roruizf/doc2md" target="_blank" rel="noopener" data-repo="roruizf/doc2md">
+            <div class="repo__top"><span class="mono">python · cli</span><span class="mono repo__stars">★ <b>0</b></span></div>
+            <h3>doc2md</h3>
+            <p>Turns PDFs, Office files, EPUB and images into clean Markdown with frontmatter, page anchors and optional OCR, so project documentation can be searched and fed to tools.</p>
+            <span class="repo__link mono">View on GitHub ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">03 — Experience</p>
+          <h2>Research, consultancy, <em>and my own practice.</em></h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="job reveal">
+            <div class="job__when mono">2021 — now</div>
+            <div class="job__body">
+              <h3>Founder &amp; energy engineer <span>· R2F Energy Efficient Solutions</span></h3>
+              <ul>
+                <li>Energy and thermal comfort simulation for 6 BREEAM projects in Europe across 8 buildings: offices, warehouses, student residences, hotels.</li>
+                <li>Energy modelling of 2 office buildings for LEED v4.1 under ASHRAE 90.1 Appendix G, baseline vs. proposed, including reviewer responses.</li>
+                <li>Open-source Python tools to build, compare and check models and query EnergyPlus SQL output.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job reveal">
+            <div class="job__when mono">2018 — 2021</div>
+            <div class="job__body">
+              <h3>Energy Efficiency Expert <span>· Sweco Belgium, Brussels</span></h3>
+              <ul>
+                <li>Energy lead in a building services (MEP) team: energy and overheating simulations supporting BREEAM projects.</li>
+                <li>Energy audits, including regulatory audits of European Parliament buildings: site assessment of boilers, chillers and AHUs, and techno-economic evaluation of measures.</li>
+                <li>EPB (PEB) compliance files with an accredited EPB adviser.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job reveal">
+            <div class="job__when mono">2010 — 2016</div>
+            <div class="job__body">
+              <h3>Research Engineer <span>· Thermodynamics Laboratory, University of Liège</span></h3>
+              <ul>
+                <li>Detailed simulation of buildings and HVAC systems: diagnosis, retrofit scenarios, savings estimation and model calibration.</li>
+                <li>Global sensitivity analysis of building energy use; impact of control strategies across a public building stock.</li>
+                <li>European and international projects: BRICKER, iSERVcmb, IEA ECBCS Annex 53.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job reveal">
+            <div class="job__when mono">2008 — 2010</div>
+            <div class="job__body">
+              <h3>Engineer <span>· Concepción, Chile</span></h3>
+              <ul>
+                <li>Waste heat recovery feasibility study for the Huachipato steel plant; solar thermal system simulation.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+
+        <div class="edu reveal">
+          <p class="eyebrow mono">Education</p>
+          <p><strong>Mechanical Engineer (Ingeniero Civil Mecánico)</strong> — Universidad de Concepción, Chile · 6-year programme, 2002–2008</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section section--alt" id="research">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">04 — Research</p>
+          <h2>Peer-reviewed work on <em>calibration, sensitivity and controls.</em></h2>
+        </header>
+        <ol class="pubs">
+          <li class="pub reveal">
+            <span class="pub__year mono">2016</span>
+            <div>
+              <h3>Energy Reduction in Public Building Stock: Assessing the Impact of Control Strategy over Expected Energy Savings and Indoor Comfort Level</h3>
+              <p class="mono">R. Ruiz, M. D'Antoni, V. Lemort · CLIMA 2016, Aalborg</p>
+            </div>
+          </li>
+          <li class="pub reveal">
+            <span class="pub__year mono">2014</span>
+            <div>
+              <h3>Calibration of Building Simulation Models: Assessment of Current Acceptance Criteria</h3>
+              <p class="mono">R. Ruiz, V. Lemort · IEECB'14, Frankfurt</p>
+            </div>
+          </li>
+          <li class="pub reveal">
+            <span class="pub__year mono">2012</span>
+            <div>
+              <h3>Global Sensitivity Analysis applied to Total Energy Use in Buildings</h3>
+              <p class="mono">R. Ruiz, S. Bertagnolio, V. Lemort · High Performance Buildings Conference, Purdue</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <p class="eyebrow mono reveal">05 — Contact</p>
+        <h2 class="contact__title reveal">Have a building to model<br><em>or a team to join?</em></h2>
+        <p class="contact__lede reveal">Dual Chilean and Belgian citizen, free to work anywhere in the EU.</p>
+        <a class="contact__mail reveal" href="mailto:roruizf@gmail.com">roruizf@gmail.com <span aria-hidden="true">→</span></a>
+        <ul class="contact__links reveal">
+          <li><a href="https://www.linkedin.com/in/roruizf/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="https://github.com/roruizf" target="_blank" rel="noopener">GitHub ↗</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner mono">
+      <span>© <span id="year">2026</span> Roberto Ruiz Flores</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="../../assets/main.js" defer></script>
+<nav class="vswitch" aria-label="Design variants"><a href="../../index.html">Base</a><a href="../a/">A · Taller</a><a href="../b/" aria-current=page>B · Swiss</a><a href="../c/">C · Blueprint</a></nav>
+</body>
+</html>

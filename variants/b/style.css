@@ -1,0 +1,99 @@
+/* Variant B — "Swiss": International Typographic Style.
+   Pure white, true black, one signal orange. Visible column grid, hard rules, no radius, no shadows. */
+:root, :root:not([data-theme]) {
+  --paper: #ffffff;
+  --paper-2: #f2f2f2;
+  --card: #ffffff;
+  --ink: #0a0a0a;
+  --ink-2: #3a3a3a;
+  --ink-3: #8a8a8a;
+  --line: #0a0a0a;
+  --soft: #dddddd;
+  --heat: #ff4d00;
+  --ok: #ff4d00;
+  --thermal: linear-gradient(90deg, #0a0a0a, #555, #bbb, #eee, #ffb08a, #ff4d00);
+  --carpet: "10 10 10, 72 72 72, 150 150 150, 228 228 228, 255 176 138, 255 77 0";
+  --serif: "Geist", system-ui, sans-serif;
+  --sans: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  --radius: 0px;
+  color-scheme: light;
+}
+body { font-size: 17px; }
+/* 12-column grid instead of graph paper */
+body::before { background-image: linear-gradient(90deg, rgba(10,10,10,.05) 1px, transparent 1px); background-size: calc(100% / 12) 100%; opacity: 1; mask-image: none; }
+
+.hero__title, .section h2, .contact__title { font-family: var(--sans); font-weight: 600; letter-spacing: -.055em; line-height: .95; }
+.hero__title { font-size: clamp(44px, 6.4vw, 92px); }
+.hero__title em, .section h2 em, .contact__title em { font-style: normal; }
+.hero__title em { background: none; color: var(--heat); -webkit-background-clip: initial; background-clip: initial; }
+.section h2 em, .contact__title em { color: var(--ink-3); }
+.eyebrow { color: var(--ink); font-size: 12px; letter-spacing: .02em; display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 10px; height: 10px; background: var(--heat); }
+
+.btn { border-radius: 0; font-weight: 500; }
+.btn:hover { transform: none; background: var(--heat); border-color: var(--heat); color: #fff; }
+.btn--ghost { border-color: var(--ink); }
+
+.nav { background: #fff; backdrop-filter: none; border-bottom: 1px solid var(--ink); }
+.brand__mark { border-radius: 0; background: var(--heat); color: #fff; }
+.nav__links a { border-radius: 0; color: var(--ink); }
+.nav__links a:hover, .nav__links a.is-active { background: transparent; color: var(--heat); }
+.nav__inner { height: 60px; }
+
+.status { border-radius: 0; border-color: var(--ink); background: #fff; color: var(--ink); }
+.status__dot { border-radius: 0; animation: none; }
+.plot { border-radius: 0; box-shadow: none; border: 1px solid var(--ink); background: #fff; }
+#carpet { border-radius: 0; }
+.colorbar i { border-radius: 0; }
+
+.stats { border-top: 2px solid var(--ink); }
+.stat + .stat { border-left-color: var(--soft); }
+.stat dd { font-family: var(--sans); font-weight: 600; letter-spacing: -.06em; font-size: clamp(64px, 8vw, 112px); }
+.stat__unit { color: var(--heat); }
+
+.section { border-top: 1px solid var(--ink); }
+.cards { gap: 0; border-top: 0; }
+.card { border: 0; border-left: 1px solid var(--soft); border-radius: 0; background: transparent; padding: 8px 28px 8px; }
+.card:first-child { border-left: 0; padding-left: 0; }
+.card::after { display: none; }
+.card:hover { transform: none; }
+.card__icon { color: var(--heat); }
+.card__icon svg * { stroke: var(--heat); }
+.tags li { border-radius: 0; border-color: var(--ink); color: var(--ink); }
+code { border-radius: 0; }
+@media (max-width: 900px) { .card { border-left: 0; border-top: 1px solid var(--soft); padding: 28px 0; } .card:first-child { border-top: 0; } }
+
+.section--ink { background: #0a0a0a; --line: #333; --ink-2: #bbb; --ink-3: #777; --card: #0a0a0a; --paper-2: #1c1c1c; }
+.section--ink h2 { color: #fff; }
+.section--ink .eyebrow { color: #fff; }
+.repos { gap: 0; border: 1px solid #333; }
+.repo { border-radius: 0; border: 0; border-right: 1px solid #333; }
+.repo--feature { border-right: 0; border-bottom: 1px solid #333; }
+.repos .repo:last-child { border-right: 0; }
+.repo:hover { transform: none; background: var(--heat); }
+.repo:hover p, .repo:hover .repo__top, .repo:hover .repo__link, .repo:hover .repo__stars b { color: #0a0a0a; }
+.repo:hover code { background: rgba(0,0,0,.12); color: #0a0a0a; }
+.repo__stars b { color: var(--heat); }
+.repo__code { border-radius: 0; background: #161616; }
+.repo__code .k { color: var(--heat); }
+@media (max-width: 900px) { .repo { border-right: 0; border-bottom: 1px solid #333; } }
+
+.timeline { border-top: 2px solid var(--ink); }
+.job { border-bottom-color: var(--soft); }
+.job h3 { font-weight: 600; }
+.job__when { color: var(--heat); }
+.job li::before { background: var(--ink); width: 6px; height: 6px; top: .62em; }
+.edu { border-radius: 0; border: 1px solid var(--ink); }
+
+.section--alt { background: #fff; }
+.pubs { gap: 0; border-top: 2px solid var(--ink); }
+.pub { border-radius: 0; border: 0; border-bottom: 1px solid var(--soft); background: transparent; padding: 28px 0; }
+.pub h3 { font-family: var(--sans); font-weight: 500; letter-spacing: -.02em; }
+
+.contact { border-top: 1px solid var(--ink); }
+.contact::before { display: none; }
+.contact__title { font-size: clamp(48px, 8vw, 120px); }
+.contact__mail { font-family: var(--sans); font-weight: 600; letter-spacing: -.04em; }
+.contact__mail:hover { color: var(--heat); border-color: var(--heat); }
+.foot { border-top: 1px solid var(--ink); color: var(--ink); }
